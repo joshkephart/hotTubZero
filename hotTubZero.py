@@ -13,15 +13,8 @@ pumpTwo = OutputDevice(27)
 circPump = OutputDevice(22)
 heater = OutputDevice(25)
 
-# button toggle functions
-# - need one for each because it seems that you cannot pass in parameters with when_pressed binding
-def pumpOneToggle():
-    pumpOne.toggle()
-def pumpTwoToggle():
-    pumpTwo.toggle()
-
-# bind toggle function to button press
-pumpOneButton.when_pressed = pumpOneToggle
-pumpTwoButton.when_pressed = pumpTwoToggle
+# bind toggle functions to button presses
+pumpOneButton.when_pressed = pumpOne.toggle
+pumpTwoButton.when_pressed = pumpTwo.toggle
 
 pause()
