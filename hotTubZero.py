@@ -13,11 +13,12 @@ pumpTwo = OutputDevice(27)
 circPump = OutputDevice(22)
 heater = OutputDevice(25)
 
+# button toggle function
+def pumpToggle(pumpButton):
+    pumpButton.toggle()
+
 # bind toggle function to button press
 pumpOneButton.when_pressed = pumpToggle
 pumpTwoButton.when_pressed = pumpToggle
 
 pause()
-
-def pumpToggle(pumpButton):
-    pumpButton.toggle()
