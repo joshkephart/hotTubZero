@@ -1,11 +1,13 @@
 # import relevant packages
-from gpiozero import OutputDevice
+from gpiozero import Button, OutputDevice
 from time import sleep
 
-# set up pins we are going to use
-pumpOne = OutputDevice(17)
+# initialize the GPIO pins for input buttons
+pumpOneButton = Button(16, False)
+pumpTwoButton = Button(20, False)
 
-# toggle pin every 5 seconds forever
-while True:
-    pumpOne.toggle()
-    sleep(5)
+# initialize the GPIO pins for generic outputs
+pumpOne = OutputDevice(17)
+pumpTwo = OutputDevice(27)
+circPump = OutputDevice(22)
+heater = OutputDevice(25)
